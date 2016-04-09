@@ -1,12 +1,16 @@
 {
   "manifest_version": 2,
-
   "name": "Hey Guy",
-  "description": "This extension puts Rick Astley in your chrome menu bar and pops up Hey Guy when clicked",
+  "description": "This extension puts Rick Astley in your chrome omnibox and pops up Hey Guy when you have an empty tab",
   "version": "0.1.0",
-
-  "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
-  }
+  "background": {
+    "scripts": [
+      "main.js"
+      ]
+  },
+  "options_page": "https://github.com/mirgags/chromePlugin",
+  "permissions": [
+    "tabs",
+    "webNavigation"
+  ]
 }

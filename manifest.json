@@ -1,16 +1,26 @@
 {
   "manifest_version": 2,
   "name": "Hey Guy",
-  "description": "This extension puts Rick Astley in your chrome omnibox and pops up Hey Guy when you have an empty tab",
+  "description": "no idea what this does yet",
   "version": "0.1.0",
   "background": {
     "scripts": [
-      "main.js"
       ]
   },
-  "options_page": "https://github.com/mirgags/chromePlugin",
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+  {
+    "matches": ["*://www.pint.com/*"],
+    "match_about_blank": true,
+    "css": ["main.css"],
+    "js": ["main.js"]
+  }
+  ],
   "permissions": [
     "tabs",
+    "activeTab",
     "webNavigation"
   ]
 }

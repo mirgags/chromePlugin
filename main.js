@@ -8,3 +8,5 @@ function checkUrl(callback) {
     break;
   };
 };
+console.log("hi concole I'm an extension");
+chrome.tabs.create({"url": "./index.html"});

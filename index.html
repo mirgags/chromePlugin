@@ -1,26 +1,22 @@
 <!doctype html>
 <!--
- This page is shown when the extension button is clicked, because the
- "browser_action" field in manifest.json contains the "default_popup" key with
- value "popup.html".
+Just trying to get the thing to make a homepage.
  -->
 <html>
   <head>
-    <title>Getting Started Extension's Popup</title>
+    <title>PINT Dashboard</title>
     <style>
       body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
         font-size: 100%;
       }
-      #status {
+      #title {
         /* avoid an excessively wide status text */
         white-space: pre;
-        text-overflow: ellipsis;
-        overflow: hidden;
         max-width: 400px;
       }
     </style>
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"/>
     <!--
       - JavaScript and HTML must be in separate files: see our Content Security
       - Policy documentation[1] for details and explanation.
@@ -33,9 +29,8 @@
   </head>
   <body>
 <!--
-    <div id="status"></div>
     <img id="image-result" hidden>
 -->
-    <div id="status">Hey Guy!</div>
+    <div id="title">Hey Guy!</div>
   </body>
 </html>

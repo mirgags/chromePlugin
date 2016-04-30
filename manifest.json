@@ -7,19 +7,22 @@
     "default_icon": "icon.png"
   },
   "background": {
-    "scripts": ["main.js"],
+    "scripts": ["main.js", "jquery.js"],
     "persistent": false
   },
   "content_scripts": [
   {
     "matches": ["*://*/*"],
     "match_about_blank": true,
-    "css": ["main.css"]
+    "css": ["main.css"],
+    "js": ["jquery.js"]
   }
   ],
   "permissions": [
     "tabs",
     "activeTab",
-    "webNavigation"
+    "webNavigation",
+    "http://*/",
+    "https://*/"
   ]
 }

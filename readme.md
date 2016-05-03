@@ -12,7 +12,6 @@ ToDo:
  - Slack Feed
  - Active Task List?
  - Attendance?
-
 * Mock up dashboard
 * Link external services
 * Present to IA for feedback

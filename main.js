@@ -4,7 +4,8 @@ var bkg = chrome.extension.getBackgroundPage();
 function openTab(callback) {
   chrome.tabs.create({"url": "index.html",
                       "active": true}, function(tab) {
-    chrome.tabs.update(tabs[0].id, {});
+    chrome.tabs.update(tab.id, {});
+    callback();
   });
   callback();
 };
@@ -25,3 +26,4 @@ function checkBathroom (bkg) {
 chrome.browserAction.onClicked.addListener(function(checkBathroom) {
   openTab(checkBathroom);
 });
+

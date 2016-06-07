@@ -7,15 +7,19 @@
     "default_icon": "icon.png"
   },
   "background": {
+<<<<<<< HEAD
     "scripts": ["main.js"],
+=======
+    "scripts": ["main.js", "background.js", "jquery.js"],
+>>>>>>> 46d5cdabbac1a59f47d787d210f236dcfe5e6b03
     "persistent": false
   },
   "content_scripts": [
   {
     "matches": ["*://*/*"],
     "match_about_blank": true,
-    "css": ["main.css"],
-    "js": ["jquery.js"]
+    "js": ["content.js", "jquery.js"],
+    "run_at": "document_end"
   }
   ],
   "permissions": [

@@ -7,7 +7,7 @@
     "default_icon": "icon.png"
   },
   "background": {
-    "scripts": ["main.js", "jquery.js"],
+    "scripts": ["main.js"],
     "persistent": false
   },
   "content_scripts": [

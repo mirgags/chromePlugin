@@ -1,10 +1,12 @@
 var lastTabId = -1;
+var bkg = chrome.extension.getBackgroundPage();
 
 function openTab(callback) {
   chrome.tabs.create({"url": "index.html",
                       "active": true}, function(tab) {
     chrome.tabs.update(tabs[0].id, {});
   });
+  callback();
 };
 
 function sendMessage() {
@@ -14,11 +16,12 @@ function sendMessage() {
   });
 };
 
-function checkBathroom () {
+function checkBathroom (bkg) {
+  bkg.console.log("in the check bathroom");
   $("#flexbox-3 > div:contains('Occupied')").css("color", "red");
   $("#flexbox-3 > div:contains('Available')").css("color", "green");
 };
 
-chrome.browserAction.onClicked.addListener(function(tab) {
-  openTab(funtion);
+chrome.browserAction.onClicked.addListener(function(checkBathroom) {
+  openTab(checkBathroom);
 });

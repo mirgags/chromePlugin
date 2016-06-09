@@ -5,7 +5,6 @@ function openTab(callback) {
   chrome.tabs.create({"url": "index.html",
                       "active": true}, function(tab) {
     chrome.tabs.update(tab.id, {});
-    callback();
   });
   callback();
 };

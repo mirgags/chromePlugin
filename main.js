@@ -22,6 +22,21 @@ function checkBathroom (bkg) {
   $("#flexbox-3 > div:contains('Available')").css("color", "green");
 };
 
+var httpRequest = new XMLHttpRequest();
+httpRequest.open('GET', 'https://www.google.com/', true);
+httpRequest.onreadystatechange = function() {
+
+    if(httpRequest.readyState == 4) {
+        if(httpRequest.status === 200) {
+            console.log('Response received \n' + httpRequest.responseText);
+        };
+    }
+    else {
+    };
+};
+
+httpRequest.send();
+
 chrome.browserAction.onClicked.addListener(function(checkBathroom) {
   openTab(checkBathroom);
 });

@@ -7,20 +7,29 @@
     "default_icon": "icon.png"
   },
   "background": {
-    "scripts": ["main.js"],
+    "scripts": [
+      "jquery.js",
+      "main.js"
+      ],
     "persistent": false
   },
   "content_scripts": [
   {
     "matches": ["*://*/*"],
     "match_about_blank": true,
-    "js": ["content.js", "jquery.js"],
+    "js": [
+      "jquery.js",
+      "content.js"
+    ],
     "run_at": "document_end"
   }
   ],
+  "content_security_policy":
+    "script-src 'self' https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js; object-src 'self'",
   "permissions": [
     "tabs",
     "activeTab",
+    "identity",
     "webNavigation",
     "http://*/",
     "https://*/"

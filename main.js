@@ -5,8 +5,13 @@ function openTab(callback) {
   chrome.tabs.create({"url": "index.html",
                       "active": true}, function(tab) {
     chrome.tabs.update(tab.id, {});
+    if(callback) {
+      return callback(tab);
+    }
+    else {
+      return;
+    };
   });
-  callback();
 };
 
 function sendMessage() {
@@ -16,19 +21,18 @@ function sendMessage() {
   });
 };
 
-function checkBathroom (bkg) {
-  bkg.console.log("in the check bathroom");
+function checkBathroom () {
   $("#flexbox-3 > div:contains('Occupied')").css("color", "red");
   $("#flexbox-3 > div:contains('Available')").css("color", "green");
 };
 
-var httpRequest = new XMLHttpRequest();
+httpRequest = new XMLHttpRequest();
 httpRequest.open('GET', 'https://www.google.com/', true);
 httpRequest.onreadystatechange = function() {
 
     if(httpRequest.readyState == 4) {
         if(httpRequest.status === 200) {
-            console.log('Response received \n' + httpRequest.responseText);
+            console.log('Response received: ' + httpRequest.status);
         };
     }
     else {
@@ -37,7 +41,9 @@ httpRequest.onreadystatechange = function() {
 
 httpRequest.send();
 
-chrome.browserAction.onClicked.addListener(function(checkBathroom) {
-  openTab(checkBathroom);
+chrome.browserAction.onClicked.addListener(function() {
+  openTab();
 });
+
+checkBathroom();
 
